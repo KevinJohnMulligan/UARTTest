@@ -7,7 +7,6 @@
   <script>
     function getReading() {
     UART.eval('test', function(t) {
-      document.getElementById("result").innerHTML = t;
      console.log('received ' + t);
     });
   }
