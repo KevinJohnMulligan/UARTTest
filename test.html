@@ -6,8 +6,9 @@
   <button onclick="UART.write('Hello from the web\n');">Send hello!</button>  
   <script>
     function getReading() {
-    UART.eval('Generic_Request()', function(t) {
+    UART.eval('test', function(t) {
       document.getElementById("result").innerHTML = t;
+     console.log('received ' + t);
     });
   }
   </script>
