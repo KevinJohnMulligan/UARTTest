@@ -3,7 +3,15 @@
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
-  <button onclick="UART.write('Hello from the web\n');">Send hello!</button>
-  <button onclick="UART.write('Goodbye\n');">Send Goodbye!</button>
+  <button onclick="UART.write('Hello from the web\n');">Send hello!</button>  
+  
+    function getReading() {
+    UART.eval('Generic_Request()', function(t) {
+      document.getElementById("result").innerHTML = t;
+    });
+  }
+  </script>
+  <button onclick="getReading()">Read Data</button>
+  <span id="result"></span>
  </body>
 </html>
